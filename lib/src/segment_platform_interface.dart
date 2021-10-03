@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:flutter_segment/src/segment_config.dart';
 import 'package:flutter_segment/src/segment_method_channel.dart';
 
@@ -13,7 +12,7 @@ abstract class SegmentPlatform {
   static SegmentPlatform instance = SegmentMethodChannel();
 
   Future<void> config({
-    @required SegmentConfig options,
+    required SegmentConfig options,
   }) {
     throw UnimplementedError('config() has not been implemented.');
   }

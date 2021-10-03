@@ -24,7 +24,7 @@ class Segment {
   }
 
   static Future<void> config({
-    @required SegmentConfig options,
+    required SegmentConfig options,
   }) {
     return _segment.config(
       options: options,
@@ -95,10 +95,8 @@ class Segment {
 
   static Future<void> debug(bool enabled) {
     if (Platform.isAndroid) {
-      throw Exception(
-        'Debug flag cannot be dynamically set on Android.\n'
-        'Add to AndroidManifest and avoid calling this method when Platform.isAndroid.'
-      );
+      throw Exception('Debug flag cannot be dynamically set on Android.\n'
+          'Add to AndroidManifest and avoid calling this method when Platform.isAndroid.');
     }
 
     return _segment.debug(enabled);
